@@ -60,8 +60,18 @@ public class WifiP2pHandler {
 
     public interface Connect {
 
+        /**
+         * 连接到地址
+         *
+         * @param address 地址
+         */
         void accepted(String address);
 
+        /**
+         * 发现设备
+         *
+         * @param peers 发现设备列表
+         */
         void updatePeerList(List<Map<String, String>> peers);
     }
 
@@ -103,12 +113,12 @@ public class WifiP2pHandler {
         p2pManager.discoverPeers(channel, new WifiP2pManager.ActionListener() {
             @Override
             public void onSuccess() {
-                Log.i(TAG, "discoverPeers onSuccess => ");
+                Log.i(TAG, "discoverPeers onSuccess");
             }
 
             @Override
             public void onFailure(int reason) {
-                Log.e(TAG, "discoverPeers onFailure => " + reason);
+                Log.e(TAG, "discoverPeers onFailure" + reason);
             }
         });
     }
@@ -123,9 +133,6 @@ public class WifiP2pHandler {
 
     @SuppressLint("MissingPermission")
     public void init() {
-        p2pManager.requestGroupInfo(channel, group -> {
-            Log.d(TAG, "init: " + group);
-        });
         WifiP2pManager.PeerListListener peerListListener = wifiP2pDeviceList -> {
             peers.clear();
             peersShow.clear();
@@ -179,12 +186,12 @@ public class WifiP2pHandler {
         stopConnect(new WifiP2pManager.ActionListener() {
             @Override
             public void onSuccess() {
-
+                Log.d(TAG, "stopConnect onSuccess");
             }
 
             @Override
             public void onFailure(int reason) {
-
+                Log.d(TAG, "stopConnect onFailure: " + reason);
             }
         });
     }
@@ -197,12 +204,12 @@ public class WifiP2pHandler {
         stopDiscoverPeers(new WifiP2pManager.ActionListener() {
             @Override
             public void onSuccess() {
-
+                Log.d(TAG, "stopDiscoverPeers onSuccess");
             }
 
             @Override
             public void onFailure(int reason) {
-
+                Log.d(TAG, "stopDiscoverPeers onFailure: " + reason);
             }
         });
     }
