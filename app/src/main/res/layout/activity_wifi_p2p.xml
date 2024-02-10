@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="top.ninng.demo.MainActivity">
+
+    <Button
+        android:id="@+id/discoverBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索" />
+
+    <Button
+        android:id="@+id/stopDiscoverBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/discoverBtn"
+        android:text="停止搜索" />
+
+    <TextView
+        android:id="@+id/stringReceiveStatusTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/stopDiscoverBtn"
+        android:text="String Receive Status: " />
+
+    <TextView
+        android:id="@+id/stringReceiveStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/stringReceiveStatusTag"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/fileReceiveStatusTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stringReceiveStatusTag"
+        android:layout_toRightOf="@+id/stopConnect"
+        android:text="    File Receive Status: " />
+
+    <TextView
+        android:id="@+id/fileReceiveStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stringReceiveStatus"
+        android:layout_toRightOf="@+id/fileReceiveStatusTag"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/sendServiceStatusTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fileReceiveStatusTag"
+        android:layout_toRightOf="@+id/stopConnect"
+        android:text="   Send service Status: " />
+
+    <TextView
+        android:id="@+id/sendServiceStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fileReceiveStatus"
+        android:layout_toRightOf="@+id/sendServiceStatusTag"
+        android:text="" />
+
+    <Button
+        android:id="@+id/createGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/discoverBtn"
+        android:text="创建组" />
+
+    <Button
+        android:id="@+id/stopConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stopDiscoverBtn"
+        android:layout_toRightOf="@+id/createGroup"
+        android:text="停止连接" />
+
+    <EditText
+        android:id="@+id/p2pInfoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/createGroup" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/p2pInfoEditText" />
+
+    <EditText
+        android:id="@+id/sendMessageEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerview"
+        android:text="内容" />
+
+    <Button
+        android:id="@+id/sendMessageBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendMessageEditText"
+        android:text="发送文字" />
+
+    <Button
+        android:id="@+id/sendFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendMessageEditText"
+        android:layout_toRightOf="@+id/sendMessageBtn"
+        android:text="发送文件" />
+
+    <EditText
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendMessageBtn"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+</RelativeLayout>

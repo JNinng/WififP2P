@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="top.ninng.demo">
+
+    <!-- 开启网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许访问网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许访问wifi状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许修改网络状态的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> <!-- 允许修改wifi状态的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 允许只读访问手机状态，包括当前蜂窝网络信息，任何正在进行的呼叫的状态，和任何在设备上注册的PhoneAccounts的列表 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许应用程序从外部存储读取 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 允许应用访问精确位置 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 允许应用程序写入外部存储 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!--  -->
+    <uses-permission
+        android:name="android.permission.NETWORK_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.NETWORK_STACK"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.NETWORK_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WifiP2P">
+        <activity
+            android:name="top.ninng.demo.MainActivity"
+            android:theme="@style/Theme.WifiP2P.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="top.ninng.demo.activity.demo.P2PActivity" />
+
+        <service android:name="top.ninng.demo.service.SendService" />
+        <service
+            android:name="top.ninng.demo.service.DefaultFileReceiveJobIntent"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="top.ninng.demo.service.DefaultFileSendJobIntent"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="top.ninng.demo.service.DefaultStringReceiveService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="top.ninng.demo.service.DefaultStringSendService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>
