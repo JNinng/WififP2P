@@ -12,10 +12,7 @@ import top.ninng.demo.activity.demo.P2PActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final String TAG = "MainActivity";
-    Button sendBtn = null;
-    Button selectFileBtn = null;
     Button wifiP2pBtn = null;
-    Button lanTcpIP = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void initView() {
         wifiP2pBtn = (Button) findViewById(R.id.wifiP2pBtn);
 
-        selectFileBtn.setOnClickListener(this);
-        sendBtn.setOnClickListener(this);
         wifiP2pBtn.setOnClickListener(this);
-        lanTcpIP.setOnClickListener(this);
     }
 
     @Override
